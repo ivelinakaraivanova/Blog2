@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Articles List{% endblock %}
+
+{% block style %}
+    <style>
+        .link-style {
+            color: black;
+            text-decoration: none;
+        }
+
+        .link-style:hover {
+            color: gray;
+            text-decoration: none;
+        }
+    </style>
+
+{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+    {%  for article in articles %}
+        <span class="badge rounded-pill bg-success">Author: {{ article.author }}</span>
+        <h1><a class="link-style" href="{% url 'article_details' article.slug %}">{{ article.title}}</a></h1>
+
+    {% endfor %}
+    </div>
+{% endblock %}
