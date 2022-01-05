@@ -12,7 +12,6 @@
     </style>
 {%  endblock %}
 
-
 {% block body %}
     <div class="container mt-4 register_style">
     <h3>Register an account</h3>
@@ -20,6 +19,7 @@
         Use the following form for the login
     </p>
     <form action="" method="post" novalidate>
+
         {% csrf_token %}
         {{ user_form | crispy }}
 
