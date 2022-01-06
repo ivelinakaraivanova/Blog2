@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
 from articles.forms import LoginForm, UserRegistration, ArticleRegistrationForm, ArticleUpdateForm
@@ -80,6 +81,7 @@ def register(request):
     return render(request, 'account/register.html', {'user_form': user_form})
 
 
+@login_required
 def add_article(request):
     if request.method == "POST":
         article_form = ArticleRegistrationForm(request.POST)

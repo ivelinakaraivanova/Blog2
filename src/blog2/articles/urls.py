@@ -5,7 +5,7 @@ from articles.views import articles_list, article_details, user_login, register,
     delete_article
 
 urlpatterns = [
-    path('articles/', articles_list, name='articles_list'),
+    path('', articles_list, name='articles_list'),
     path('articles/<slug:slug>/', article_details, name='article_details'),
     path('article/add/', add_article, name='add_article'),
     path('article/update/<slug:slug>/', update_article, name='update_article'),
