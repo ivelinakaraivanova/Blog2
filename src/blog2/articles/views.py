@@ -76,7 +76,7 @@ def register(request):
             return render(request, 'account/register_done.html', {'user_form': user_form})
 
     else:
-        user_form = UserRegistration(request.POST)
+        user_form = UserRegistration()
 
     return render(request, 'account/register.html', {'user_form': user_form})
 
