@@ -1,2 +1,2 @@
 # Blog2
-Another blog project with Django
+Blog project with Django again
